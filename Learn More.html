@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More - SLMYA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background:rgb(236, 185, 90);
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background:rgb(46, 66, 153);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background:rgba(156, 201, 72, 0.73);
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #003366;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        h2 {
+            color: #004080;
+            border-bottom: 2px solid #004080;
+            padding-bottom: 5px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ff6600;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #cc5200;
+        }
+
+        .image-slider {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background: #fff;
+        }
+        
+        .slide-card {
+            display: none;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .slide-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            max-height: 280px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+        
+        .prev:hover, .next:hover {
+            background: rgba(0,0,0,0.7);
+        }
+        
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        
+
+        footer {
+            background: #004080;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>Sierra Leone Muslim Youth Assembly (SLMYA)</header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#programs">Programs</a>
+        <a href="#events">Events</a>
+        <a href="#resources">Resources</a>
+    </nav>
+
+    <div class="container">
+        <section id="about" class="section">
+            <h2>About SLMYA</h2>
+            <p>The Sierra Leone Muslim Youth Assembly (SLMYA) was founded to unite and empower Muslim youth across Sierra Leone, providing them with spiritual guidance, leadership training, and community service opportunities. Recognizing the challenges faced by young Muslims—such as limited access to education, social support, and leadership roles—SLMYA was established to bridge these gaps.</p>
+            <p>Since its inception, the organization has actively promoted Islamic values, youth development, and social responsibility through educational programs, community outreach, and advocacy initiatives. With a strong emphasis on unity, leadership, and service, SLMYA continues to inspire and support young Muslims to become positive change-makers in their communities and beyond.</p>
+        </section>
+
+        <section id="leadership" class="section">
+            <h2>Leadership & Structure</h2>
+            <p>SLMYA has a structured leadership framework, including the President, Vice President, Secretary, and key divisions such as the Female Wing and Imam & Religious Affairs Division.</p>
+        </section>
+
+        <section id="programs" class="section">
+            <h2>Programs & Initiatives</h2>
+            <ul>
+                <li>Youth empowerment programs</li>
+                <li>Community outreach and charity initiatives</li>
+                <li>Educational and leadership training opportunities</li>
+            </ul>
+        </section>
+
+        <section id="events" class="section">
+            <h2>Events & Activities</h2>
+            <p>SLMYA organizes conferences, workshops, and youth leadership summits. Below are some highlights from past events:</p>
+        
+            <div class="image-slider">
+                <div class="slide-card slide active">
+                    <img src="event 1.jpg" alt="Event 1">
+                </div>
+                <div class="slide-card slide">
+                    <img src="event 2.jpg" alt="Event 2">
+                </div>
+                <div class="slide-card slide">
+                    <img src="event 3.jpg" alt="Event 3">
+                </div>
+                <div class="slide-card slide">
+                    <img src="event 4.jpg" alt="Event 4">
+                </div>
+        
+                <button class="prev" onclick="prevSlide()">&#10094;</button>
+                <button class="next" onclick="nextSlide()">&#10095;</button>
+            </div>
+        </section>
+        
+
+        <section id="resources" class="section">
+            <h2>Resources & Publications</h2>
+            <p>SLMYA provides Islamic educational materials, videos, podcasts, and blog posts to help young Muslims grow spiritually and intellectually.</p>
+        </section>
+
+        <section id="get-involved" class="section">
+            <h2>How to Get Involved</h2>
+            <ul>
+                <li>Register as a member</li>
+                <li>Volunteer for events and projects</li>
+                <li>Support through donations, sponsorships, or partnerships</li>
+            </ul>
+            <a href="#" class="btn">Join Now</a>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 Sierra Leone Muslim Youth Assembly | All Rights Reserved
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+            showSlide(currentSlide);
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+            showSlide(currentSlide);
+        }
+
+        showSlide(currentSlide);
+    </script>
+
+</body>
+</html>

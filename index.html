@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLMYA - Home</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script defer src="scripts/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(235, 160, 75);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            left: -250px;
+            top: 0;
+            background: #2c3e50;
+            transition: left 0.3s ease-in-out;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar ul li {
+            padding: 15px 20px;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            background: #34495e;
+        }
+
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            z-index: 1000;
+            padding: 10px;
+            background-color: #27ae60;
+            border-radius: 5px;
+        }
+
+        .content {
+            margin-left: 0;
+            padding: 20px;
+            transition: margin-left 0.3s ease-in-out;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content.shift {
+            margin-left: 250px;
+        }
+
+        .hero {
+            text-align: center;
+            background: url('images/hero-bg.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        .btn {
+            background: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .btn.secondary {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    <nav class="sidebar">
+        <div class="logo">SLMYA</div>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="About Us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="programs.html"><i class="fas fa-book"></i> Programs</a></li>
+            <li><a href="membership.html"><i class="fas fa-users"></i> Membership</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="content">
+        <header class="hero">
+            <h1>Empowering Muslim Youth in Sierra Leone</h1>
+            <p>Building a stronger future through faith, education, and leadership.</p>
+            <a href="Join Us.html" class="btn">Join Us</a>
+            <a href="Learn More.html" class="btn secondary">Learn More</a>
+        </header>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('active');
+            document.querySelector('.content').classList.toggle('shift');
+        }
+
+        // Debugging Link Clicks
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(event) {
+                console.log('Navigating to:', this.href);
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership - Join Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(235, 160, 75);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .membership-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    .form-group input, .form-group textarea {
+      width: calc(100% - 40px);
+      padding: 12px;
+      padding-left: 40px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      display: block;
+    }
+
+    .form-group i {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+    }
+
+    .file-input {
+      border: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #219150;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="membership-container">
+    <h2>Join Our Association</h2>
+    <p>Fill out the form below to become a member. You will be redirected to WhatsApp to send your details.</p>
+
+    <form id="membershipForm">
+      <div class="form-group">
+        <i class="fas fa-user"></i>
+        <input type="text" id="name" placeholder="Full Name" required>
+      </div>
+
+      <div class="form-group">
+        <i class="fas fa-envelope"></i>
+        <input type="email" id="email" placeholder="Email Address" required>
+      </div>
+
+      <div class="form-group">
+        <i class="fas fa-phone"></i>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+      </div>
+
+      <div class="form-group">
+        <i class="fas fa-file"></i>
+        <input type="file" id="attachment" class="file-input" required>
+      </div>
+
+      <div class="form-group">
+        <i class="fas fa-comment"></i>
+        <textarea id="message" rows="4" placeholder="Why do you want to join?" required></textarea>
+      </div>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("membershipForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let phone = document.getElementById("phone").value;
+      let message = document.getElementById("message").value;
+
+      // Set your WhatsApp number here (e.g., 232XXXXXXXXX without +)
+      let phoneNumber = "23278980349";
+
+      let whatsappMessage = `Hello, I want to apply for membership:%0A%0A*Full Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Reason:* ${message}%0A%0A(Attachment screenshot will be sent separately.)`;
+
+      let whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+
+</body>
+</html>
